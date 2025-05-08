@@ -11,10 +11,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Instagram Clone',
+      debugShowCheckedModeBanner: false,
+      title: 'Instagram',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black54,
+          elevation: 0,
+          type: BottomNavigationBarType.fixed,
+        ),
       ),
+
       home: const MainNavigationPage(),
     );
   }
@@ -31,7 +40,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    const HomePage(), // ← 여기만 수정!
+    const HomePage(),
     Center(child: Text('검색')),
     Center(child: Text('추가')),
     Center(child: Text('릴스')),
@@ -47,15 +56,11 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black54,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const [
@@ -71,7 +76,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
               radius: 12,
               backgroundImage: AssetImage(
                 'assets/images/profile/profile1.png',
-              ), // 너의 프로필 사진 경로로 교체
+              ), 
             ),
             label: '프로필',
           ),

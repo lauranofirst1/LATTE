@@ -33,17 +33,18 @@ class _PostItemState extends State<PostItem> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-       ListTile(
-  contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-  leading: CircleAvatar(
-    backgroundImage: AssetImage(post.userImage),
-  ),
-  title: Text(
-    post.username,
-    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-  ),
-  trailing: const Icon(Icons.more_vert),
-),
+        ListTile(
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 0,
+          ),
+          leading: CircleAvatar(backgroundImage: AssetImage(post.userImage)),
+          title: Text(
+            post.username,
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+          ),
+          trailing: const Icon(Icons.more_vert),
+        ),
 
         Image.asset(post.postImage, fit: BoxFit.cover, width: double.infinity),
         Padding(
@@ -88,7 +89,10 @@ class _PostItemState extends State<PostItem> {
             text: TextSpan(
               style: const TextStyle(color: Colors.black),
               children: [
-                TextSpan(text: post.username, style: const TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(
+                  text: post.username,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
                 const TextSpan(text: '  '),
                 TextSpan(text: post.content),
               ],
