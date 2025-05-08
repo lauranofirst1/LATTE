@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/data/post_dummy_data.dart';
 import 'package:instagram/components/post_item.dart';
-import 'package:instagram/components/story_list.dart'; // 추가
+import 'package:instagram/components/story_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
